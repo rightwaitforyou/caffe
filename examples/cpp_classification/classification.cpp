@@ -234,7 +234,7 @@ int main(int argc, char** argv) {
     return 1;
   }
 
-  ::google::InitGoogleLogging(argv[0]);
+  
 
   string model_file   = argv[1];
   string trained_file = argv[2];
@@ -244,8 +244,7 @@ int main(int argc, char** argv) {
 
   string file = argv[5];
 
-  std::cout << "---------- Prediction for "
-            << file << " ----------" << std::endl;
+  
 
   cv::Mat img = cv::imread(file, -1);
   CHECK(!img.empty()) << "Unable to decode image " << file;
@@ -255,7 +254,7 @@ int main(int argc, char** argv) {
   for (size_t i = 0; i < predictions.size(); ++i) {
     Prediction p = predictions[i];
     std::cout << std::fixed << std::setprecision(4) << p.second << " - \""
-              << p.first << "\"" << std::endl;
+              << p.first << "\"" << "@" << std::endl;
   }
 }
 #else
