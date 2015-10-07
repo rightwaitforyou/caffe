@@ -235,7 +235,7 @@ int main(int argc, char** argv) {
   }
 
   
-
+  ::google::InitGoogleLogging(argv[0]);
   string model_file   = argv[1];
   string trained_file = argv[2];
   string mean_file    = argv[3];
@@ -244,7 +244,7 @@ int main(int argc, char** argv) {
 
   string file = argv[5];
 
-  
+ 
 
   cv::Mat img = cv::imread(file, -1);
   CHECK(!img.empty()) << "Unable to decode image " << file;
